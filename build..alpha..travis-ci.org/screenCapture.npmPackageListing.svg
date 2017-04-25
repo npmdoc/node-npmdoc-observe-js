@@ -1,0 +1,33 @@
+<svg height="478" width="720" xmlns="http://www.w3.org/2000/svg">
+<rect height="478" fill="#555" width="720"></rect>
+<text fill="#7f7" font-family="Courier New" font-size="12" xml:space="preserve">
+<tspan x="10" y="26">  0.  2017-04-25 22:28:01 +0000   166494 bytes  .</tspan>
+<tspan x="10" y="42">  1.  2017-04-25 22:28:01 +0000      189 bytes  AUTHORS</tspan>
+<tspan x="10" y="58">  2.  2017-04-25 22:28:01 +0000     7618 bytes  README.md</tspan>
+<tspan x="10" y="74">  3.  2017-04-25 22:28:01 +0000     4554 bytes  benchmark/benchmark.js</tspan>
+<tspan x="10" y="90">  4.  2017-04-25 22:28:01 +0000     1091 bytes  benchmark/d8_benchmarks.js</tspan>
+<tspan x="10" y="106">  5.  2017-04-25 22:28:01 +0000     5038 bytes  benchmark/index.html</tspan>
+<tspan x="10" y="122">  6.  2017-04-25 22:28:01 +0000     9215 bytes  benchmark/observation_benchmark.js</tspan>
+<tspan x="10" y="138">  7.  2017-04-25 22:28:01 +0000      433 bytes  bower.json</tspan>
+<tspan x="10" y="154">  8.  2017-04-25 22:28:01 +0000      174 bytes  codereview.settings</tspan>
+<tspan x="10" y="170">  9.  2017-04-25 22:28:01 +0000     1112 bytes  conf/karma.conf.js</tspan>
+<tspan x="10" y="186"> 10.  2017-04-25 22:28:01 +0000      609 bytes  conf/mocha.conf.js</tspan>
+<tspan x="10" y="202"> 11.  2017-04-25 22:28:01 +0000     2007 bytes  examples/circles.html</tspan>
+<tspan x="10" y="218"> 12.  2017-04-25 22:28:01 +0000     1056 bytes  examples/constrain.html</tspan>
+<tspan x="10" y="234"> 13.  2017-04-25 22:28:01 +0000    11049 bytes  examples/constrain.js</tspan>
+<tspan x="10" y="250"> 14.  2017-04-25 22:28:01 +0000      634 bytes  examples/persist.html</tspan>
+<tspan x="10" y="266"> 15.  2017-04-25 22:28:01 +0000     6486 bytes  examples/persist.js</tspan>
+<tspan x="10" y="282"> 16.  2017-04-25 22:28:01 +0000     1092 bytes  gruntfile.js</tspan>
+<tspan x="10" y="298"> 17.  2017-04-25 22:28:01 +0000     2138 bytes  index.html</tspan>
+<tspan x="10" y="314"> 18.  2017-04-25 22:28:01 +0000      527 bytes  observe-js.html</tspan>
+<tspan x="10" y="330"> 19.  2017-04-25 22:28:01 +0000     2555 bytes  package.json</tspan>
+<tspan x="10" y="346"> 20.  2017-04-25 22:28:01 +0000    44922 bytes  src/observe.js</tspan>
+<tspan x="10" y="362"> 21.  2017-04-25 22:28:01 +0000     3214 bytes  tests/array_fuzzer.js</tspan>
+<tspan x="10" y="378"> 22.  2017-04-25 22:28:01 +0000     1367 bytes  tests/d8_array_fuzzer.js</tspan>
+<tspan x="10" y="394"> 23.  2017-04-25 22:28:01 +0000     1237 bytes  tests/d8_planner_test.js</tspan>
+<tspan x="10" y="410"> 24.  2017-04-25 22:28:01 +0000     1114 bytes  tests/index.html</tspan>
+<tspan x="10" y="426"> 25.  2017-04-25 22:28:01 +0000     2996 bytes  tests/planner.html</tspan>
+<tspan x="10" y="442"> 26.  2017-04-25 22:28:01 +0000    46791 bytes  tests/test.js</tspan>
+<tspan x="10" y="458"> 27.  2017-04-25 22:28:01 +0000     7276 bytes  util/planner.js</tspan>
+</text>
+</svg>

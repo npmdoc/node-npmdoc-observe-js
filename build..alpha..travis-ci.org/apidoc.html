@@ -1,0 +1,3247 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/Polymer/observe-js#readme"
+
+    >observe-js (v0.5.7)</a>
+</h1>
+<h4>observe-js is a library for observing changes on JavaScript objects/arrays</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.observe-js">module observe-js</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.ArrayObserver">
+            function <span class="apidocSignatureSpan">observe-js.</span>ArrayObserver
+            <span class="apidocSignatureSpan">(array)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.ArraySplice">
+            function <span class="apidocSignatureSpan">observe-js.</span>ArraySplice
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.CompoundObserver">
+            function <span class="apidocSignatureSpan">observe-js.</span>CompoundObserver
+            <span class="apidocSignatureSpan">(reportChangesOnOpen)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.ObjectObserver">
+            function <span class="apidocSignatureSpan">observe-js.</span>ObjectObserver
+            <span class="apidocSignatureSpan">(object)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.Observer">
+            function <span class="apidocSignatureSpan">observe-js.</span>Observer
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.ObserverTransform">
+            function <span class="apidocSignatureSpan">observe-js.</span>ObserverTransform
+            <span class="apidocSignatureSpan">(observable, getValueFn, setValueFn, dontPassThroughSet)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.Path">
+            function <span class="apidocSignatureSpan">observe-js.</span>Path
+            <span class="apidocSignatureSpan">(parts, privateToken)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.PathObserver">
+            function <span class="apidocSignatureSpan">observe-js.</span>PathObserver
+            <span class="apidocSignatureSpan">(object, path, defaultValue)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">observe-js.</span>ArrayObserver.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">observe-js.</span>ArraySplice.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">observe-js.</span>CompoundObserver.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">observe-js.</span>ObjectObserver.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">observe-js.</span>Observer.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">observe-js.</span>ObserverTransform.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">observe-js.</span>Path.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">observe-js.</span>PathObserver.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">observe-js.</span>benchmark</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">observe-js.</span>planner</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.observe-js.ArrayObserver">module observe-js.ArrayObserver</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.ArrayObserver.ArrayObserver">
+            function <span class="apidocSignatureSpan">observe-js.</span>ArrayObserver
+            <span class="apidocSignatureSpan">(array)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.ArrayObserver.applySplices">
+            function <span class="apidocSignatureSpan">observe-js.ArrayObserver.</span>applySplices
+            <span class="apidocSignatureSpan">(previous, current, splices)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.ArrayObserver.calculateSplices">
+            function <span class="apidocSignatureSpan">observe-js.ArrayObserver.</span>calculateSplices
+            <span class="apidocSignatureSpan">(current, previous)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.observe-js.ArrayObserver.prototype">module observe-js.ArrayObserver.prototype</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">observe-js.ArrayObserver.prototype.</span>arrayObserve</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.ArrayObserver.prototype.check_">
+            function <span class="apidocSignatureSpan">observe-js.ArrayObserver.prototype.</span>check_
+            <span class="apidocSignatureSpan">(changeRecords)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.ArrayObserver.prototype.copyObject">
+            function <span class="apidocSignatureSpan">observe-js.ArrayObserver.prototype.</span>copyObject
+            <span class="apidocSignatureSpan">(arr)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.observe-js.ArraySplice">module observe-js.ArraySplice</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.ArraySplice.ArraySplice">
+            function <span class="apidocSignatureSpan">observe-js.</span>ArraySplice
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.observe-js.ArraySplice.prototype">module observe-js.ArraySplice.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.ArraySplice.prototype.calcEditDistances">
+            function <span class="apidocSignatureSpan">observe-js.ArraySplice.prototype.</span>calcEditDistances
+            <span class="apidocSignatureSpan">(current, currentStart, currentEnd, old, oldStart, oldEnd)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.ArraySplice.prototype.calcSplices">
+            function <span class="apidocSignatureSpan">observe-js.ArraySplice.prototype.</span>calcSplices
+            <span class="apidocSignatureSpan">(current, currentStart, currentEnd, old, oldStart, oldEnd)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.ArraySplice.prototype.calculateSplices">
+            function <span class="apidocSignatureSpan">observe-js.ArraySplice.prototype.</span>calculateSplices
+            <span class="apidocSignatureSpan">(current, previous)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.ArraySplice.prototype.equals">
+            function <span class="apidocSignatureSpan">observe-js.ArraySplice.prototype.</span>equals
+            <span class="apidocSignatureSpan">(currentValue, previousValue)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.ArraySplice.prototype.sharedPrefix">
+            function <span class="apidocSignatureSpan">observe-js.ArraySplice.prototype.</span>sharedPrefix
+            <span class="apidocSignatureSpan">(current, old, searchLength)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.ArraySplice.prototype.sharedSuffix">
+            function <span class="apidocSignatureSpan">observe-js.ArraySplice.prototype.</span>sharedSuffix
+            <span class="apidocSignatureSpan">(current, old, searchLength)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.ArraySplice.prototype.spliceOperationsFromEditDistances">
+            function <span class="apidocSignatureSpan">observe-js.ArraySplice.prototype.</span>spliceOperationsFromEditDistances
+            <span class="apidocSignatureSpan">(distances)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.observe-js.CompoundObserver">module observe-js.CompoundObserver</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.CompoundObserver.CompoundObserver">
+            function <span class="apidocSignatureSpan">observe-js.</span>CompoundObserver
+            <span class="apidocSignatureSpan">(reportChangesOnOpen)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.observe-js.CompoundObserver.prototype">module observe-js.CompoundObserver.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.CompoundObserver.prototype.addObserver">
+            function <span class="apidocSignatureSpan">observe-js.CompoundObserver.prototype.</span>addObserver
+            <span class="apidocSignatureSpan">(observer)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.CompoundObserver.prototype.addPath">
+            function <span class="apidocSignatureSpan">observe-js.CompoundObserver.prototype.</span>addPath
+            <span class="apidocSignatureSpan">(object, path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.CompoundObserver.prototype.check_">
+            function <span class="apidocSignatureSpan">observe-js.CompoundObserver.prototype.</span>check_
+            <span class="apidocSignatureSpan">(changeRecords, skipChanges)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.CompoundObserver.prototype.connect_">
+            function <span class="apidocSignatureSpan">observe-js.CompoundObserver.prototype.</span>connect_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.CompoundObserver.prototype.disconnect_">
+            function <span class="apidocSignatureSpan">observe-js.CompoundObserver.prototype.</span>disconnect_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.CompoundObserver.prototype.finishReset">
+            function <span class="apidocSignatureSpan">observe-js.CompoundObserver.prototype.</span>finishReset
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.CompoundObserver.prototype.iterateObjects_">
+            function <span class="apidocSignatureSpan">observe-js.CompoundObserver.prototype.</span>iterateObjects_
+            <span class="apidocSignatureSpan">(observe)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.CompoundObserver.prototype.startReset">
+            function <span class="apidocSignatureSpan">observe-js.CompoundObserver.prototype.</span>startReset
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.observe-js.ObjectObserver">module observe-js.ObjectObserver</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.ObjectObserver.ObjectObserver">
+            function <span class="apidocSignatureSpan">observe-js.</span>ObjectObserver
+            <span class="apidocSignatureSpan">(object)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.observe-js.ObjectObserver.prototype">module observe-js.ObjectObserver.prototype</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">observe-js.ObjectObserver.prototype.</span>arrayObserve</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.ObjectObserver.prototype.check_">
+            function <span class="apidocSignatureSpan">observe-js.ObjectObserver.prototype.</span>check_
+            <span class="apidocSignatureSpan">(changeRecords, skipChanges)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.ObjectObserver.prototype.connect_">
+            function <span class="apidocSignatureSpan">observe-js.ObjectObserver.prototype.</span>connect_
+            <span class="apidocSignatureSpan">(callback, target)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.ObjectObserver.prototype.copyObject">
+            function <span class="apidocSignatureSpan">observe-js.ObjectObserver.prototype.</span>copyObject
+            <span class="apidocSignatureSpan">(object)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.ObjectObserver.prototype.deliver">
+            function <span class="apidocSignatureSpan">observe-js.ObjectObserver.prototype.</span>deliver
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.ObjectObserver.prototype.discardChanges">
+            function <span class="apidocSignatureSpan">observe-js.ObjectObserver.prototype.</span>discardChanges
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.ObjectObserver.prototype.disconnect_">
+            function <span class="apidocSignatureSpan">observe-js.ObjectObserver.prototype.</span>disconnect_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.observe-js.Observer">module observe-js.Observer</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">observe-js.Observer.</span>hasObjectObserve</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.Observer.Observer">
+            function <span class="apidocSignatureSpan">observe-js.</span>Observer
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.Observer.runEOM_">
+            function <span class="apidocSignatureSpan">observe-js.Observer.</span>runEOM_
+            <span class="apidocSignatureSpan">(fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">observe-js.Observer.</span>_allObserversCount</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">observe-js.Observer.</span>observerSentinel_</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.observe-js.Observer.prototype">module observe-js.Observer.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.Observer.prototype.close">
+            function <span class="apidocSignatureSpan">observe-js.Observer.prototype.</span>close
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.Observer.prototype.deliver">
+            function <span class="apidocSignatureSpan">observe-js.Observer.prototype.</span>deliver
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.Observer.prototype.discardChanges">
+            function <span class="apidocSignatureSpan">observe-js.Observer.prototype.</span>discardChanges
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.Observer.prototype.open">
+            function <span class="apidocSignatureSpan">observe-js.Observer.prototype.</span>open
+            <span class="apidocSignatureSpan">(callback, target)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.Observer.prototype.report_">
+            function <span class="apidocSignatureSpan">observe-js.Observer.prototype.</span>report_
+            <span class="apidocSignatureSpan">(changes)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.observe-js.ObserverTransform">module observe-js.ObserverTransform</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.ObserverTransform.ObserverTransform">
+            function <span class="apidocSignatureSpan">observe-js.</span>ObserverTransform
+            <span class="apidocSignatureSpan">(observable, getValueFn, setValueFn, dontPassThroughSet)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.observe-js.ObserverTransform.prototype">module observe-js.ObserverTransform.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.ObserverTransform.prototype.close">
+            function <span class="apidocSignatureSpan">observe-js.ObserverTransform.prototype.</span>close
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.ObserverTransform.prototype.deliver">
+            function <span class="apidocSignatureSpan">observe-js.ObserverTransform.prototype.</span>deliver
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.ObserverTransform.prototype.discardChanges">
+            function <span class="apidocSignatureSpan">observe-js.ObserverTransform.prototype.</span>discardChanges
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.ObserverTransform.prototype.observedCallback_">
+            function <span class="apidocSignatureSpan">observe-js.ObserverTransform.prototype.</span>observedCallback_
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.ObserverTransform.prototype.open">
+            function <span class="apidocSignatureSpan">observe-js.ObserverTransform.prototype.</span>open
+            <span class="apidocSignatureSpan">(callback, target)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.ObserverTransform.prototype.setValue">
+            function <span class="apidocSignatureSpan">observe-js.ObserverTransform.prototype.</span>setValue
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.observe-js.Path">module observe-js.Path</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.Path.Path">
+            function <span class="apidocSignatureSpan">observe-js.</span>Path
+            <span class="apidocSignatureSpan">(parts, privateToken)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.Path.get">
+            function <span class="apidocSignatureSpan">observe-js.Path.</span>get
+            <span class="apidocSignatureSpan">(pathString)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.observe-js.Path.prototype">module observe-js.Path.prototype</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">observe-js.Path.prototype.</span>valid</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.Path.prototype.compiledGetValueFromFn">
+            function <span class="apidocSignatureSpan">observe-js.Path.prototype.</span>compiledGetValueFromFn
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.Path.prototype.getValueFrom">
+            function <span class="apidocSignatureSpan">observe-js.Path.prototype.</span>getValueFrom
+            <span class="apidocSignatureSpan">(obj, defaultValue)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.Path.prototype.iterateObjects">
+            function <span class="apidocSignatureSpan">observe-js.Path.prototype.</span>iterateObjects
+            <span class="apidocSignatureSpan">(obj, observe)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.Path.prototype.setValueFrom">
+            function <span class="apidocSignatureSpan">observe-js.Path.prototype.</span>setValueFrom
+            <span class="apidocSignatureSpan">(obj, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.Path.prototype.toString">
+            function <span class="apidocSignatureSpan">observe-js.Path.prototype.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.observe-js.PathObserver">module observe-js.PathObserver</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.PathObserver.PathObserver">
+            function <span class="apidocSignatureSpan">observe-js.</span>PathObserver
+            <span class="apidocSignatureSpan">(object, path, defaultValue)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.observe-js.PathObserver.prototype">module observe-js.PathObserver.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.PathObserver.prototype.check_">
+            function <span class="apidocSignatureSpan">observe-js.PathObserver.prototype.</span>check_
+            <span class="apidocSignatureSpan">(changeRecords, skipChanges)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.PathObserver.prototype.connect_">
+            function <span class="apidocSignatureSpan">observe-js.PathObserver.prototype.</span>connect_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.PathObserver.prototype.disconnect_">
+            function <span class="apidocSignatureSpan">observe-js.PathObserver.prototype.</span>disconnect_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.PathObserver.prototype.iterateObjects_">
+            function <span class="apidocSignatureSpan">observe-js.PathObserver.prototype.</span>iterateObjects_
+            <span class="apidocSignatureSpan">(observe)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.PathObserver.prototype.setValue">
+            function <span class="apidocSignatureSpan">observe-js.PathObserver.prototype.</span>setValue
+            <span class="apidocSignatureSpan">(newValue)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">undefined <span class="apidocSignatureSpan">observe-js.PathObserver.prototype.</span>path</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.observe-js.benchmark">module observe-js.benchmark</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.benchmark.Benchmark">
+            function <span class="apidocSignatureSpan">observe-js.benchmark.</span>Benchmark
+            <span class="apidocSignatureSpan">(testingTicks, ticksPerFrame, maxRuns)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.observe-js.planner">module observe-js.planner</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.observe-js.planner.Planner">
+            function <span class="apidocSignatureSpan">observe-js.planner.</span>Planner
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.observe-js" id="apidoc.module.observe-js">module observe-js</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.ArrayObserver" id="apidoc.element.observe-js.ArrayObserver">
+        function <span class="apidocSignatureSpan">observe-js.</span>ArrayObserver
+        <span class="apidocSignatureSpan">(array)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ArrayObserver(array) {
+  if (!Array.isArray(array))
+    throw Error(&#x27;Provided object is not an Array&#x27;);
+  ObjectObserver.call(this, array);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.ArraySplice" id="apidoc.element.observe-js.ArraySplice">
+        function <span class="apidocSignatureSpan">observe-js.</span>ArraySplice
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ArraySplice() {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.CompoundObserver" id="apidoc.element.observe-js.CompoundObserver">
+        function <span class="apidocSignatureSpan">observe-js.</span>CompoundObserver
+        <span class="apidocSignatureSpan">(reportChangesOnOpen)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function CompoundObserver(reportChangesOnOpen) {
+  Observer.call(this);
+
+  this.reportChangesOnOpen_ = reportChangesOnOpen;
+  this.value_ = [];
+  this.directObserver_ = undefined;
+  this.observed_ = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.ObjectObserver" id="apidoc.element.observe-js.ObjectObserver">
+        function <span class="apidocSignatureSpan">observe-js.</span>ObjectObserver
+        <span class="apidocSignatureSpan">(object)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ObjectObserver(object) {
+  Observer.call(this);
+  this.value_ = object;
+  this.oldObject_ = undefined;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.Observer" id="apidoc.element.observe-js.Observer">
+        function <span class="apidocSignatureSpan">observe-js.</span>Observer
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Observer() {
+  this.state_ = UNOPENED;
+  this.callback_ = undefined;
+  this.target_ = undefined; // TODO(rafaelw): Should be WeakRef
+  this.directObserver_ = undefined;
+  this.value_ = undefined;
+  this.id_ = nextObserverId++;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.ObserverTransform" id="apidoc.element.observe-js.ObserverTransform">
+        function <span class="apidocSignatureSpan">observe-js.</span>ObserverTransform
+        <span class="apidocSignatureSpan">(observable, getValueFn, setValueFn, dontPassThroughSet)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ObserverTransform(observable, getValueFn, setValueFn, dontPassThroughSet) {
+  this.callback_ = undefined;
+  this.target_ = undefined;
+  this.value_ = undefined;
+  this.observable_ = observable;
+  this.getValueFn_ = getValueFn || identFn;
+  this.setValueFn_ = setValueFn || identFn;
+  // TODO(rafaelw): This is a temporary hack. PolymerExpressions needs this
+  // at the moment because of a bug in it&#x27;s dependency tracking.
+  this.dontPassThroughSet_ = dontPassThroughSet;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.Path" id="apidoc.element.observe-js.Path">
+        function <span class="apidocSignatureSpan">observe-js.</span>Path
+        <span class="apidocSignatureSpan">(parts, privateToken)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Path(parts, privateToken) {
+  if (privateToken !== constructorIsPrivate)
+    throw Error(&#x27;Use Path.get to retrieve path objects&#x27;);
+
+  for (var i = 0; i &#x3c; parts.length; i++) {
+    this.push(String(parts[i]));
+  }
+
+  if (hasEval &#x26;&#x26; this.length) {
+    this.getValueFrom = this.compiledGetValueFromFn();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.PathObserver" id="apidoc.element.observe-js.PathObserver">
+        function <span class="apidocSignatureSpan">observe-js.</span>PathObserver
+        <span class="apidocSignatureSpan">(object, path, defaultValue)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function PathObserver(object, path, defaultValue) {
+  Observer.call(this);
+
+  this.object_ = object;
+  this.path_ = getPath(path);
+  this.defaultValue_ = defaultValue;
+  this.directObserver_ = undefined;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.observe-js.ArrayObserver" id="apidoc.module.observe-js.ArrayObserver">module observe-js.ArrayObserver</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.ArrayObserver.ArrayObserver" id="apidoc.element.observe-js.ArrayObserver.ArrayObserver">
+        function <span class="apidocSignatureSpan">observe-js.</span>ArrayObserver
+        <span class="apidocSignatureSpan">(array)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ArrayObserver(array) {
+  if (!Array.isArray(array))
+    throw Error(&#x27;Provided object is not an Array&#x27;);
+  ObjectObserver.call(this, array);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.ArrayObserver.applySplices" id="apidoc.element.observe-js.ArrayObserver.applySplices">
+        function <span class="apidocSignatureSpan">observe-js.ArrayObserver.</span>applySplices
+        <span class="apidocSignatureSpan">(previous, current, splices)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">applySplices = function (previous, current, splices) {
+  splices.forEach(function(splice) {
+    var spliceArgs = [splice.index, splice.removed.length];
+    var addIndex = splice.index;
+    while (addIndex &#x3c; splice.index + splice.addedCount) {
+      spliceArgs.push(current[addIndex]);
+      addIndex++;
+    }
+
+    Array.prototype.splice.apply(previous, spliceArgs);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  var orig = this.arr = randArray();
+  randomArrayOperations(this.arr, ArrayFuzzer.operationCount);
+  var copy = this.copy = this.arr.slice();
+  this.origCopy = this.copy.slice();
+
+  var observer = new ArrayObserver(this.arr);
+  observer.open(function(splices) {
+    ArrayObserver.<span class="apidocCodeKeywordSpan">applySplices</span>(copy, orig, splices);
+  });
+
+  this.ops = randomArrayOperations(this.arr, ArrayFuzzer.operationCount);
+  observer.deliver();
+  observer.close();
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.ArrayObserver.calculateSplices" id="apidoc.element.observe-js.ArrayObserver.calculateSplices">
+        function <span class="apidocSignatureSpan">observe-js.ArrayObserver.</span>calculateSplices
+        <span class="apidocSignatureSpan">(current, previous)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">calculateSplices = function (current, previous) {
+  return arraySplice.calculateSplices(current, previous);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+expose.Observer = Observer;
+expose.Observer.runEOM_ = runEOM;
+expose.Observer.observerSentinel_ = observerSentinel; // for testing.
+expose.Observer.hasObjectObserve = hasObserve;
+expose.ArrayObserver = ArrayObserver;
+expose.ArrayObserver.calculateSplices = function(current, previous) {
+  return arraySplice.<span class="apidocCodeKeywordSpan">calculateSplices</span>(current, previous);
+};
+
+expose.ArraySplice = ArraySplice;
+expose.ObjectObserver = ObjectObserver;
+expose.PathObserver = PathObserver;
+expose.CompoundObserver = CompoundObserver;
+expose.Path = Path;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.observe-js.ArrayObserver.prototype" id="apidoc.module.observe-js.ArrayObserver.prototype">module observe-js.ArrayObserver.prototype</a></h1>
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.ArrayObserver.prototype.check_" id="apidoc.element.observe-js.ArrayObserver.prototype.check_">
+        function <span class="apidocSignatureSpan">observe-js.ArrayObserver.prototype.</span>check_
+        <span class="apidocSignatureSpan">(changeRecords)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">check_ = function (changeRecords) {
+  var splices;
+  if (hasObserve) {
+    if (!changeRecords)
+      return false;
+    splices = projectArraySplices(this.value_, changeRecords);
+  } else {
+    splices = calcSplices(this.value_, 0, this.value_.length,
+                          this.oldObject_, 0, this.oldObject_.length);
+  }
+
+  if (!splices || !splices.length)
+    return false;
+
+  if (!hasObserve)
+    this.oldObject_ = this.copyObject(this.value_);
+
+  this.report_([splices]);
+  return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+invalidPath.valid = false;
+invalidPath.getValueFrom = invalidPath.setValueFrom = function() {};
+
+var MAX_DIRTY_CHECK_CYCLES = 1000;
+
+function dirtyCheck(observer) {
+  var cycles = 0;
+  while (cycles &#x3c; MAX_DIRTY_CHECK_CYCLES &#x26;&#x26; observer.<span class="apidocCodeKeywordSpan">check_</span>()) {
+    cycles++;
+  }
+  if (testingExposeCycleCount)
+    global.dirtyCheckCycleCount = cycles;
+
+  return cycles &#x3e; 0;
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.ArrayObserver.prototype.copyObject" id="apidoc.element.observe-js.ArrayObserver.prototype.copyObject">
+        function <span class="apidocSignatureSpan">observe-js.ArrayObserver.prototype.</span>copyObject
+        <span class="apidocSignatureSpan">(arr)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">copyObject = function (arr) {
+  return arr.slice();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+arrayObserve: false,
+
+connect_: function(callback, target) {
+  if (hasObserve) {
+    this.directObserver_ = getObservedObject(this, this.value_,
+                                             this.arrayObserve);
+  } else {
+    this.oldObject_ = this.<span class="apidocCodeKeywordSpan">copyObject</span>(this.value_);
+  }
+
+},
+
+copyObject: function(object) {
+  var copy = Array.isArray(object) ? [] : {};
+  for (var prop in object) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.observe-js.ArraySplice" id="apidoc.module.observe-js.ArraySplice">module observe-js.ArraySplice</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.ArraySplice.ArraySplice" id="apidoc.element.observe-js.ArraySplice.ArraySplice">
+        function <span class="apidocSignatureSpan">observe-js.</span>ArraySplice
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ArraySplice() {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.observe-js.ArraySplice.prototype" id="apidoc.module.observe-js.ArraySplice.prototype">module observe-js.ArraySplice.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.ArraySplice.prototype.calcEditDistances" id="apidoc.element.observe-js.ArraySplice.prototype.calcEditDistances">
+        function <span class="apidocSignatureSpan">observe-js.ArraySplice.prototype.</span>calcEditDistances
+        <span class="apidocSignatureSpan">(current, currentStart, currentEnd, old, oldStart, oldEnd)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">calcEditDistances = function (current, currentStart, currentEnd, old, oldStart, oldEnd) {
+  // &#x22;Deletion&#x22; columns
+  var rowCount = oldEnd - oldStart + 1;
+  var columnCount = currentEnd - currentStart + 1;
+  var distances = new Array(rowCount);
+
+  var i, j;
+
+  // &#x22;Addition&#x22; rows. Initialize null column.
+  for (i = 0; i &#x3c; rowCount; i++) {
+    distances[i] = new Array(columnCount);
+    distances[i][0] = i;
+  }
+
+  // Initialize null row
+  for (j = 0; j &#x3c; columnCount; j++)
+    distances[0][j] = j;
+
+  for (i = 1; i &#x3c; rowCount; i++) {
+    for (j = 1; j &#x3c; columnCount; j++) {
+      if (this.equals(current[currentStart + j - 1], old[oldStart + i - 1]))
+        distances[i][j] = distances[i - 1][j - 1];
+      else {
+        var north = distances[i - 1][j] + 1;
+        var west = distances[i][j - 1] + 1;
+        distances[i][j] = north &#x3c; west ? north : west;
+      }
+    }
+  }
+
+  return distances;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    splice.removed.push(old[oldStart++]);
+
+  return [ splice ];
+} else if (oldStart == oldEnd)
+  return [ newSplice(currentStart, [], currentEnd - currentStart) ];
+
+var ops = this.spliceOperationsFromEditDistances(
+    this.<span class="apidocCodeKeywordSpan">calcEditDistances</span>(current, currentStart, currentEnd,
+                           old, oldStart, oldEnd));
+
+var splices = [];
+var index = currentStart;
+var oldIndex = oldStart;
+for (var i = 0; i &#x3c; ops.length; i++) {
+  switch(ops[i]) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.ArraySplice.prototype.calcSplices" id="apidoc.element.observe-js.ArraySplice.prototype.calcSplices">
+        function <span class="apidocSignatureSpan">observe-js.ArraySplice.prototype.</span>calcSplices
+        <span class="apidocSignatureSpan">(current, currentStart, currentEnd, old, oldStart, oldEnd)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">calcSplices = function (current, currentStart, currentEnd, old, oldStart, oldEnd) {
+  var prefixCount = 0;
+  var suffixCount = 0;
+
+  var minLength = Math.min(currentEnd - currentStart, oldEnd - oldStart);
+  if (currentStart == 0 &#x26;&#x26; oldStart == 0)
+    prefixCount = this.sharedPrefix(current, old, minLength);
+
+  if (currentEnd == current.length &#x26;&#x26; oldEnd == old.length)
+    suffixCount = this.sharedSuffix(current, old, minLength - prefixCount);
+
+  currentStart += prefixCount;
+  oldStart += prefixCount;
+  currentEnd -= suffixCount;
+  oldEnd -= suffixCount;
+
+  if (currentEnd - currentStart == 0 &#x26;&#x26; oldEnd - oldStart == 0)
+    return [];
+
+  var splice;
+  if (currentStart == currentEnd) {
+    splice = newSplice(currentStart, [], 0);
+    while (oldStart &#x3c; oldEnd)
+      splice.removed.push(old[oldStart++]);
+
+    return [ splice ];
+  } else if (oldStart == oldEnd)
+    return [ newSplice(currentStart, [], currentEnd - currentStart) ];
+
+  var ops = this.spliceOperationsFromEditDistances(
+      this.calcEditDistances(current, currentStart, currentEnd,
+                             old, oldStart, oldEnd));
+
+  var splices = [];
+  var index = currentStart;
+  var oldIndex = oldStart;
+  for (var i = 0; i &#x3c; ops.length; i++) {
+    switch(ops[i]) {
+      case EDIT_LEAVE:
+        if (splice) {
+          splices.push(splice);
+          splice = undefined;
+        }
+
+        index++;
+        oldIndex++;
+        break;
+      case EDIT_UPDATE:
+        if (!splice)
+          splice = newSplice(index, [], 0);
+
+        splice.addedCount++;
+        index++;
+
+        splice.removed.push(old[oldIndex]);
+        oldIndex++;
+        break;
+      case EDIT_ADD:
+        if (!splice)
+          splice = newSplice(index, [], 0);
+
+        splice.addedCount++;
+        index++;
+        break;
+      case EDIT_DELETE:
+        if (!splice)
+          splice = newSplice(index, [], 0);
+
+        splice.removed.push(old[oldIndex]);
+        oldIndex++;
+        break;
+    }
+  }
+
+  if (splice) {
+    splices.push(splice);
+  }
+  return splices;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    while (count &#x3c; searchLength &#x26;&#x26; this.equals(current[--index1], old[--index2]))
+      count++;
+
+    return count;
+  },
+
+  calculateSplices: function(current, previous) {
+    return this.<span class="apidocCodeKeywordSpan">calcSplices</span>(current, 0, current.length, previous, 0,
+                            previous.length);
+  },
+
+  equals: function(currentValue, previousValue) {
+    return currentValue === previousValue;
+  }
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.ArraySplice.prototype.calculateSplices" id="apidoc.element.observe-js.ArraySplice.prototype.calculateSplices">
+        function <span class="apidocSignatureSpan">observe-js.ArraySplice.prototype.</span>calculateSplices
+        <span class="apidocSignatureSpan">(current, previous)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">calculateSplices = function (current, previous) {
+  return this.calcSplices(current, 0, current.length, previous, 0,
+                          previous.length);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+expose.Observer = Observer;
+expose.Observer.runEOM_ = runEOM;
+expose.Observer.observerSentinel_ = observerSentinel; // for testing.
+expose.Observer.hasObjectObserve = hasObserve;
+expose.ArrayObserver = ArrayObserver;
+expose.ArrayObserver.calculateSplices = function(current, previous) {
+  return arraySplice.<span class="apidocCodeKeywordSpan">calculateSplices</span>(current, previous);
+};
+
+expose.ArraySplice = ArraySplice;
+expose.ObjectObserver = ObjectObserver;
+expose.PathObserver = PathObserver;
+expose.CompoundObserver = CompoundObserver;
+expose.Path = Path;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.ArraySplice.prototype.equals" id="apidoc.element.observe-js.ArraySplice.prototype.equals">
+        function <span class="apidocSignatureSpan">observe-js.ArraySplice.prototype.</span>equals
+        <span class="apidocSignatureSpan">(currentValue, previousValue)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">equals = function (currentValue, previousValue) {
+  return currentValue === previousValue;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+// Initialize null row
+for (j = 0; j &#x3c; columnCount; j++)
+  distances[0][j] = j;
+
+for (i = 1; i &#x3c; rowCount; i++) {
+  for (j = 1; j &#x3c; columnCount; j++) {
+    if (this.<span class="apidocCodeKeywordSpan">equals</span>(current[currentStart + j - 1], old[oldStart + i - 1]))
+      distances[i][j] = distances[i - 1][j - 1];
+    else {
+      var north = distances[i - 1][j] + 1;
+      var west = distances[i][j - 1] + 1;
+      distances[i][j] = north &#x3c; west ? north : west;
+    }
+  }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.ArraySplice.prototype.sharedPrefix" id="apidoc.element.observe-js.ArraySplice.prototype.sharedPrefix">
+        function <span class="apidocSignatureSpan">observe-js.ArraySplice.prototype.</span>sharedPrefix
+        <span class="apidocSignatureSpan">(current, old, searchLength)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sharedPrefix = function (current, old, searchLength) {
+  for (var i = 0; i &#x3c; searchLength; i++)
+    if (!this.equals(current[i], old[i]))
+      return i;
+  return searchLength;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    calcSplices: function(current, currentStart, currentEnd,
+                    old, oldStart, oldEnd) {
+var prefixCount = 0;
+var suffixCount = 0;
+
+var minLength = Math.min(currentEnd - currentStart, oldEnd - oldStart);
+if (currentStart == 0 &#x26;&#x26; oldStart == 0)
+  prefixCount = this.<span class="apidocCodeKeywordSpan">sharedPrefix</span>(current, old, minLength);
+
+if (currentEnd == current.length &#x26;&#x26; oldEnd == old.length)
+  suffixCount = this.sharedSuffix(current, old, minLength - prefixCount);
+
+currentStart += prefixCount;
+oldStart += prefixCount;
+currentEnd -= suffixCount;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.ArraySplice.prototype.sharedSuffix" id="apidoc.element.observe-js.ArraySplice.prototype.sharedSuffix">
+        function <span class="apidocSignatureSpan">observe-js.ArraySplice.prototype.</span>sharedSuffix
+        <span class="apidocSignatureSpan">(current, old, searchLength)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sharedSuffix = function (current, old, searchLength) {
+  var index1 = current.length;
+  var index2 = old.length;
+  var count = 0;
+  while (count &#x3c; searchLength &#x26;&#x26; this.equals(current[--index1], old[--index2]))
+    count++;
+
+  return count;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var suffixCount = 0;
+
+var minLength = Math.min(currentEnd - currentStart, oldEnd - oldStart);
+if (currentStart == 0 &#x26;&#x26; oldStart == 0)
+  prefixCount = this.sharedPrefix(current, old, minLength);
+
+if (currentEnd == current.length &#x26;&#x26; oldEnd == old.length)
+  suffixCount = this.<span class="apidocCodeKeywordSpan">sharedSuffix</span>(current, old, minLength - prefixCount);
+
+currentStart += prefixCount;
+oldStart += prefixCount;
+currentEnd -= suffixCount;
+oldEnd -= suffixCount;
+
+if (currentEnd - currentStart == 0 &#x26;&#x26; oldEnd - oldStart == 0)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.ArraySplice.prototype.spliceOperationsFromEditDistances" id="apidoc.element.observe-js.ArraySplice.prototype.spliceOperationsFromEditDistances">
+        function <span class="apidocSignatureSpan">observe-js.ArraySplice.prototype.</span>spliceOperationsFromEditDistances
+        <span class="apidocSignatureSpan">(distances)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">spliceOperationsFromEditDistances = function (distances) {
+  var i = distances.length - 1;
+  var j = distances[0].length - 1;
+  var current = distances[i][j];
+  var edits = [];
+  while (i &#x3e; 0 || j &#x3e; 0) {
+    if (i == 0) {
+      edits.push(EDIT_ADD);
+      j--;
+      continue;
+    }
+    if (j == 0) {
+      edits.push(EDIT_DELETE);
+      i--;
+      continue;
+    }
+    var northWest = distances[i - 1][j - 1];
+    var west = distances[i - 1][j];
+    var north = distances[i][j - 1];
+
+    var min;
+    if (west &#x3c; north)
+      min = west &#x3c; northWest ? west : northWest;
+    else
+      min = north &#x3c; northWest ? north : northWest;
+
+    if (min == northWest) {
+      if (northWest == current) {
+        edits.push(EDIT_LEAVE);
+      } else {
+        edits.push(EDIT_UPDATE);
+        current = northWest;
+      }
+      i--;
+      j--;
+    } else if (min == west) {
+      edits.push(EDIT_DELETE);
+      i--;
+      current = west;
+    } else {
+      edits.push(EDIT_ADD);
+      j--;
+      current = north;
+    }
+  }
+
+  edits.reverse();
+  return edits;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  while (oldStart &#x3c; oldEnd)
+    splice.removed.push(old[oldStart++]);
+
+  return [ splice ];
+} else if (oldStart == oldEnd)
+  return [ newSplice(currentStart, [], currentEnd - currentStart) ];
+
+var ops = this.<span class="apidocCodeKeywordSpan">spliceOperationsFromEditDistances</span>(
+    this.calcEditDistances(current, currentStart, currentEnd,
+                           old, oldStart, oldEnd));
+
+var splices = [];
+var index = currentStart;
+var oldIndex = oldStart;
+for (var i = 0; i &#x3c; ops.length; i++) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.observe-js.CompoundObserver" id="apidoc.module.observe-js.CompoundObserver">module observe-js.CompoundObserver</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.CompoundObserver.CompoundObserver" id="apidoc.element.observe-js.CompoundObserver.CompoundObserver">
+        function <span class="apidocSignatureSpan">observe-js.</span>CompoundObserver
+        <span class="apidocSignatureSpan">(reportChangesOnOpen)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function CompoundObserver(reportChangesOnOpen) {
+  Observer.call(this);
+
+  this.reportChangesOnOpen_ = reportChangesOnOpen;
+  this.value_ = [];
+  this.directObserver_ = undefined;
+  this.observed_ = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.observe-js.CompoundObserver.prototype" id="apidoc.module.observe-js.CompoundObserver.prototype">module observe-js.CompoundObserver.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.CompoundObserver.prototype.addObserver" id="apidoc.element.observe-js.CompoundObserver.prototype.addObserver">
+        function <span class="apidocSignatureSpan">observe-js.CompoundObserver.prototype.</span>addObserver
+        <span class="apidocSignatureSpan">(observer)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addObserver = function (observer) {
+  if (this.state_ != UNOPENED &#x26;&#x26; this.state_ != RESETTING)
+    throw Error(&#x27;Cannot add observers once started.&#x27;);
+
+  this.observed_.push(observerSentinel, observer);
+  if (!this.reportChangesOnOpen_)
+    return;
+  var index = this.observed_.length / 2 - 1;
+  this.value_[index] = observer.open(this.deliver, this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+b: 2,
+};
+
+var otherObj = { c: 3 };
+
+var observer = new CompoundObserver();
+observer.addPath(obj, &#x27;a&#x27;);
+observer.<span class="apidocCodeKeywordSpan">addObserver</span>(new PathObserver(obj, &#x27;b&#x27;));
+observer.addPath(otherObj, &#x27;c&#x27;);
+var logTemplate = &#x27;The %sth value before &#x26; after:&#x27;;
+observer.open(function(newValues, oldValues) {
+// Use for-in to iterate which values have changed.
+for (var i in oldValues) {
+  console.log(logTemplate, i, oldValues[i], newValues[i]);
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.CompoundObserver.prototype.addPath" id="apidoc.element.observe-js.CompoundObserver.prototype.addPath">
+        function <span class="apidocSignatureSpan">observe-js.CompoundObserver.prototype.</span>addPath
+        <span class="apidocSignatureSpan">(object, path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addPath = function (object, path) {
+  if (this.state_ != UNOPENED &#x26;&#x26; this.state_ != RESETTING)
+    throw Error(&#x27;Cannot add paths once started.&#x27;);
+
+  path = getPath(path);
+  this.observed_.push(object, path);
+  if (!this.reportChangesOnOpen_)
+    return;
+  var index = this.observed_.length / 2 - 1;
+  this.value_[index] = path.getValueFrom(object);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+a: 1,
+b: 2,
+};
+
+var otherObj = { c: 3 };
+
+var observer = new CompoundObserver();
+observer.<span class="apidocCodeKeywordSpan">addPath</span>(obj, &#x27;a&#x27;);
+observer.addObserver(new PathObserver(obj, &#x27;b&#x27;));
+observer.addPath(otherObj, &#x27;c&#x27;);
+var logTemplate = &#x27;The %sth value before &#x26; after:&#x27;;
+observer.open(function(newValues, oldValues) {
+// Use for-in to iterate which values have changed.
+for (var i in oldValues) {
+  console.log(logTemplate, i, oldValues[i], newValues[i]);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.CompoundObserver.prototype.check_" id="apidoc.element.observe-js.CompoundObserver.prototype.check_">
+        function <span class="apidocSignatureSpan">observe-js.CompoundObserver.prototype.</span>check_
+        <span class="apidocSignatureSpan">(changeRecords, skipChanges)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">check_ = function (changeRecords, skipChanges) {
+  var oldValues;
+  for (var i = 0; i &#x3c; this.observed_.length; i += 2) {
+    var object = this.observed_[i];
+    var path = this.observed_[i+1];
+    var value;
+    if (object === observerSentinel) {
+      var observable = path;
+      value = this.state_ === UNOPENED ?
+          observable.open(this.deliver, this) :
+          observable.discardChanges();
+    } else {
+      value = path.getValueFrom(object);
+    }
+
+    if (skipChanges) {
+      this.value_[i / 2] = value;
+      continue;
+    }
+
+    if (areSameValue(value, this.value_[i / 2]))
+      continue;
+
+    oldValues = oldValues || [];
+    oldValues[i / 2] = this.value_[i / 2];
+    this.value_[i / 2] = value;
+  }
+
+  if (!oldValues)
+    return false;
+
+  // TODO(rafaelw): Having observed_ as the third callback arg here is
+  // pretty lame API. Fix.
+  this.report_([this.value_, oldValues, this.observed_]);
+  return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+invalidPath.valid = false;
+invalidPath.getValueFrom = invalidPath.setValueFrom = function() {};
+
+var MAX_DIRTY_CHECK_CYCLES = 1000;
+
+function dirtyCheck(observer) {
+  var cycles = 0;
+  while (cycles &#x3c; MAX_DIRTY_CHECK_CYCLES &#x26;&#x26; observer.<span class="apidocCodeKeywordSpan">check_</span>()) {
+    cycles++;
+  }
+  if (testingExposeCycleCount)
+    global.dirtyCheckCycleCount = cycles;
+
+  return cycles &#x3e; 0;
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.CompoundObserver.prototype.connect_" id="apidoc.element.observe-js.CompoundObserver.prototype.connect_">
+        function <span class="apidocSignatureSpan">observe-js.CompoundObserver.prototype.</span>connect_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">connect_ = function () {
+  if (hasObserve) {
+    var object;
+    var needsDirectObserver = false;
+    for (var i = 0; i &#x3c; this.observed_.length; i += 2) {
+      object = this.observed_[i];
+      if (object !== observerSentinel) {
+        needsDirectObserver = true;
+        break;
+      }
+    }
+
+    if (needsDirectObserver)
+      this.directObserver_ = getObservedSet(this, object);
+  }
+
+  this.check_(undefined, !this.reportChangesOnOpen_);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+open: function(callback, target) {
+  if (this.state_ != UNOPENED)
+    throw Error(&#x27;Observer has already been opened.&#x27;);
+
+  addToAll(this);
+  this.callback_ = callback;
+  this.target_ = target;
+  this.<span class="apidocCodeKeywordSpan">connect_</span>();
+  this.state_ = OPENED;
+  return this.value_;
+},
+
+close: function() {
+  if (this.state_ != OPENED)
+    return;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.CompoundObserver.prototype.disconnect_" id="apidoc.element.observe-js.CompoundObserver.prototype.disconnect_">
+        function <span class="apidocSignatureSpan">observe-js.CompoundObserver.prototype.</span>disconnect_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">disconnect_ = function () {
+  for (var i = 0; i &#x3c; this.observed_.length; i += 2) {
+    if (this.observed_[i] === observerSentinel)
+      this.observed_[i + 1].close();
+  }
+  this.observed_.length = 0;
+  this.value_.length = 0;
+
+  if (this.directObserver_) {
+    this.directObserver_.close(this);
+    this.directObserver_ = undefined;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+},
+
+close: function() {
+  if (this.state_ != OPENED)
+    return;
+
+  removeFromAll(this);
+  this.<span class="apidocCodeKeywordSpan">disconnect_</span>();
+  this.value_ = undefined;
+  this.callback_ = undefined;
+  this.target_ = undefined;
+  this.state_ = CLOSED;
+},
+
+deliver: function() {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.CompoundObserver.prototype.finishReset" id="apidoc.element.observe-js.CompoundObserver.prototype.finishReset">
+        function <span class="apidocSignatureSpan">observe-js.CompoundObserver.prototype.</span>finishReset
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">finishReset = function () {
+  if (this.state_ != RESETTING)
+    throw Error(&#x27;Can only finishReset after startReset&#x27;);
+  this.state_ = OPENED;
+  this.connect_();
+
+  return this.value_;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+model.c = 4;
+observer.deliver();
+assert.strictEqual(2, callCount);
+
+observer.startReset();
+observer.addPath(model, &#x27;b&#x27;);
+observer.addPath(model, &#x27;c&#x27;);
+assert.deepEqual([3, 4], observer.<span class="apidocCodeKeywordSpan">finishReset</span>())
+
+model.a = 3;
+observer.deliver();
+assert.strictEqual(2, callCount);
+
+model.b = 4;
+observer.deliver();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.CompoundObserver.prototype.iterateObjects_" id="apidoc.element.observe-js.CompoundObserver.prototype.iterateObjects_">
+        function <span class="apidocSignatureSpan">observe-js.CompoundObserver.prototype.</span>iterateObjects_
+        <span class="apidocSignatureSpan">(observe)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">iterateObjects_ = function (observe) {
+  var object;
+  for (var i = 0; i &#x3c; this.observed_.length; i += 2) {
+    object = this.observed_[i];
+    if (object !== observerSentinel)
+      this.observed_[i + 1].iterateObjects(object, observe);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+if (allRootObjNonObservedProps(recs))
+  return;
+
+var i, observer;
+for (i = 0; i &#x3c; observers.length; i++) {
+  observer = observers[i];
+  if (observer.state_ == OPENED) {
+    observer.<span class="apidocCodeKeywordSpan">iterateObjects_</span>(observe);
+  }
+}
+
+for (i = 0; i &#x3c; observers.length; i++) {
+  observer = observers[i];
+  if (observer.state_ == OPENED) {
+    observer.check_();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.CompoundObserver.prototype.startReset" id="apidoc.element.observe-js.CompoundObserver.prototype.startReset">
+        function <span class="apidocSignatureSpan">observe-js.CompoundObserver.prototype.</span>startReset
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">startReset = function () {
+  if (this.state_ != OPENED)
+    throw Error(&#x27;Can only reset while open&#x27;);
+
+  this.state_ = RESETTING;
+  this.disconnect_();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+observer.deliver();
+assert.strictEqual(2, callCount);
+
+model.c = 4;
+observer.deliver();
+assert.strictEqual(2, callCount);
+
+observer.<span class="apidocCodeKeywordSpan">startReset</span>();
+observer.addPath(model, &#x27;b&#x27;);
+observer.addPath(model, &#x27;c&#x27;);
+assert.deepEqual([3, 4], observer.finishReset())
+
+model.a = 3;
+observer.deliver();
+assert.strictEqual(2, callCount);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.observe-js.ObjectObserver" id="apidoc.module.observe-js.ObjectObserver">module observe-js.ObjectObserver</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.ObjectObserver.ObjectObserver" id="apidoc.element.observe-js.ObjectObserver.ObjectObserver">
+        function <span class="apidocSignatureSpan">observe-js.</span>ObjectObserver
+        <span class="apidocSignatureSpan">(object)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ObjectObserver(object) {
+  Observer.call(this);
+  this.value_ = object;
+  this.oldObject_ = undefined;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.observe-js.ObjectObserver.prototype" id="apidoc.module.observe-js.ObjectObserver.prototype">module observe-js.ObjectObserver.prototype</a></h1>
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.ObjectObserver.prototype.check_" id="apidoc.element.observe-js.ObjectObserver.prototype.check_">
+        function <span class="apidocSignatureSpan">observe-js.ObjectObserver.prototype.</span>check_
+        <span class="apidocSignatureSpan">(changeRecords, skipChanges)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">check_ = function (changeRecords, skipChanges) {
+  var diff;
+  var oldValues;
+  if (hasObserve) {
+    if (!changeRecords)
+      return false;
+
+    oldValues = {};
+    diff = diffObjectFromChangeRecords(this.value_, changeRecords,
+                                       oldValues);
+  } else {
+    oldValues = this.oldObject_;
+    diff = diffObjectFromOldObject(this.value_, this.oldObject_);
+  }
+
+  if (diffIsEmpty(diff))
+    return false;
+
+  if (!hasObserve)
+    this.oldObject_ = this.copyObject(this.value_);
+
+  this.report_([
+    diff.added || {},
+    diff.removed || {},
+    diff.changed || {},
+    function(property) {
+      return oldValues[property];
+    }
+  ]);
+
+  return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+invalidPath.valid = false;
+invalidPath.getValueFrom = invalidPath.setValueFrom = function() {};
+
+var MAX_DIRTY_CHECK_CYCLES = 1000;
+
+function dirtyCheck(observer) {
+  var cycles = 0;
+  while (cycles &#x3c; MAX_DIRTY_CHECK_CYCLES &#x26;&#x26; observer.<span class="apidocCodeKeywordSpan">check_</span>()) {
+    cycles++;
+  }
+  if (testingExposeCycleCount)
+    global.dirtyCheckCycleCount = cycles;
+
+  return cycles &#x3e; 0;
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.ObjectObserver.prototype.connect_" id="apidoc.element.observe-js.ObjectObserver.prototype.connect_">
+        function <span class="apidocSignatureSpan">observe-js.ObjectObserver.prototype.</span>connect_
+        <span class="apidocSignatureSpan">(callback, target)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">connect_ = function (callback, target) {
+  if (hasObserve) {
+    this.directObserver_ = getObservedObject(this, this.value_,
+                                             this.arrayObserve);
+  } else {
+    this.oldObject_ = this.copyObject(this.value_);
+  }
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+open: function(callback, target) {
+  if (this.state_ != UNOPENED)
+    throw Error(&#x27;Observer has already been opened.&#x27;);
+
+  addToAll(this);
+  this.callback_ = callback;
+  this.target_ = target;
+  this.<span class="apidocCodeKeywordSpan">connect_</span>();
+  this.state_ = OPENED;
+  return this.value_;
+},
+
+close: function() {
+  if (this.state_ != OPENED)
+    return;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.ObjectObserver.prototype.copyObject" id="apidoc.element.observe-js.ObjectObserver.prototype.copyObject">
+        function <span class="apidocSignatureSpan">observe-js.ObjectObserver.prototype.</span>copyObject
+        <span class="apidocSignatureSpan">(object)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">copyObject = function (object) {
+  var copy = Array.isArray(object) ? [] : {};
+  for (var prop in object) {
+    copy[prop] = object[prop];
+  }
+  if (Array.isArray(object))
+    copy.length = object.length;
+  return copy;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+arrayObserve: false,
+
+connect_: function(callback, target) {
+  if (hasObserve) {
+    this.directObserver_ = getObservedObject(this, this.value_,
+                                             this.arrayObserve);
+  } else {
+    this.oldObject_ = this.<span class="apidocCodeKeywordSpan">copyObject</span>(this.value_);
+  }
+
+},
+
+copyObject: function(object) {
+  var copy = Array.isArray(object) ? [] : {};
+  for (var prop in object) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.ObjectObserver.prototype.deliver" id="apidoc.element.observe-js.ObjectObserver.prototype.deliver">
+        function <span class="apidocSignatureSpan">observe-js.ObjectObserver.prototype.</span>deliver
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">deliver = function () {
+  if (this.state_ != OPENED)
+    return;
+
+  if (hasObserve)
+    this.directObserver_.deliver(false);
+  else
+    dirtyCheck(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+// returns 20.
+transform.open(function(newValue, oldValue) {
+  console.log(&#x27;new: &#x27; + newValue + &#x27;, old: &#x27; + oldValue);
+});
+
+obj.value = 20;
+transform.<span class="apidocCodeKeywordSpan">deliver</span>(); // &#x27;new: 40, old: 20&#x27;
+transform.setValue(4); // obj.value === 2;
+```
+
+ObserverTransform can also be used to reduce a set of observed values to a single value:
+
+```JavaScript
+var obj = { a: 1, b: 2, c: 3 };
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.ObjectObserver.prototype.discardChanges" id="apidoc.element.observe-js.ObjectObserver.prototype.discardChanges">
+        function <span class="apidocSignatureSpan">observe-js.ObjectObserver.prototype.</span>discardChanges
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">discardChanges = function () {
+  if (this.directObserver_)
+    this.directObserver_.deliver(true);
+  else
+    this.oldObject_ = this.copyObject(this.value_);
+
+  return this.value_;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var object = this.observed_[i];
+var path = this.observed_[i+1];
+var value;
+if (object === observerSentinel) {
+  var observable = path;
+  value = this.state_ === UNOPENED ?
+      observable.open(this.deliver, this) :
+      observable.<span class="apidocCodeKeywordSpan">discardChanges</span>();
+} else {
+  value = path.getValueFrom(object);
+}
+
+if (skipChanges) {
+  this.value_[i / 2] = value;
+  continue;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.ObjectObserver.prototype.disconnect_" id="apidoc.element.observe-js.ObjectObserver.prototype.disconnect_">
+        function <span class="apidocSignatureSpan">observe-js.ObjectObserver.prototype.</span>disconnect_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">disconnect_ = function () {
+  if (hasObserve) {
+    this.directObserver_.close();
+    this.directObserver_ = undefined;
+  } else {
+    this.oldObject_ = undefined;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+},
+
+close: function() {
+  if (this.state_ != OPENED)
+    return;
+
+  removeFromAll(this);
+  this.<span class="apidocCodeKeywordSpan">disconnect_</span>();
+  this.value_ = undefined;
+  this.callback_ = undefined;
+  this.target_ = undefined;
+  this.state_ = CLOSED;
+},
+
+deliver: function() {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.observe-js.Observer" id="apidoc.module.observe-js.Observer">module observe-js.Observer</a></h1>
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.Observer.Observer" id="apidoc.element.observe-js.Observer.Observer">
+        function <span class="apidocSignatureSpan">observe-js.</span>Observer
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Observer() {
+  this.state_ = UNOPENED;
+  this.callback_ = undefined;
+  this.target_ = undefined; // TODO(rafaelw): Should be WeakRef
+  this.directObserver_ = undefined;
+  this.value_ = undefined;
+  this.id_ = nextObserverId++;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.Observer.runEOM_" id="apidoc.element.observe-js.Observer.runEOM_">
+        function <span class="apidocSignatureSpan">observe-js.Observer.</span>runEOM_
+        <span class="apidocSignatureSpan">(fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">runEOM_ = function (fn) {
+  eomTasks.push(fn);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.observe-js.Observer.prototype" id="apidoc.module.observe-js.Observer.prototype">module observe-js.Observer.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.Observer.prototype.close" id="apidoc.element.observe-js.Observer.prototype.close">
+        function <span class="apidocSignatureSpan">observe-js.Observer.prototype.</span>close
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">close = function () {
+  if (this.state_ != OPENED)
+    return;
+
+  removeFromAll(this);
+  this.disconnect_();
+  this.value_ = undefined;
+  this.callback_ = undefined;
+  this.target_ = undefined;
+  this.state_ = CLOSED;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  this.mutations = 0;
+},
+
+dispose: function() {
+  this.objects = null;
+  while (this.observers.length) {
+    this.observers.pop().<span class="apidocCodeKeywordSpan">close</span>();
+  }
+  this.observers = null;
+  if (Observer._allObserversCount != 0) {
+    alert(&#x27;Observers leaked&#x27;);
+  }
+},
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.Observer.prototype.deliver" id="apidoc.element.observe-js.Observer.prototype.deliver">
+        function <span class="apidocSignatureSpan">observe-js.Observer.prototype.</span>deliver
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">deliver = function () {
+  if (this.state_ != OPENED)
+    return;
+
+  dirtyCheck(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+// returns 20.
+transform.open(function(newValue, oldValue) {
+  console.log(&#x27;new: &#x27; + newValue + &#x27;, old: &#x27; + oldValue);
+});
+
+obj.value = 20;
+transform.<span class="apidocCodeKeywordSpan">deliver</span>(); // &#x27;new: 40, old: 20&#x27;
+transform.setValue(4); // obj.value === 2;
+```
+
+ObserverTransform can also be used to reduce a set of observed values to a single value:
+
+```JavaScript
+var obj = { a: 1, b: 2, c: 3 };
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.Observer.prototype.discardChanges" id="apidoc.element.observe-js.Observer.prototype.discardChanges">
+        function <span class="apidocSignatureSpan">observe-js.Observer.prototype.</span>discardChanges
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">discardChanges = function () {
+  this.check_(undefined, true);
+  return this.value_;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var object = this.observed_[i];
+var path = this.observed_[i+1];
+var value;
+if (object === observerSentinel) {
+  var observable = path;
+  value = this.state_ === UNOPENED ?
+      observable.open(this.deliver, this) :
+      observable.<span class="apidocCodeKeywordSpan">discardChanges</span>();
+} else {
+  value = path.getValueFrom(object);
+}
+
+if (skipChanges) {
+  this.value_[i / 2] = value;
+  continue;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.Observer.prototype.open" id="apidoc.element.observe-js.Observer.prototype.open">
+        function <span class="apidocSignatureSpan">observe-js.Observer.prototype.</span>open
+        <span class="apidocSignatureSpan">(callback, target)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">open = function (callback, target) {
+  if (this.state_ != UNOPENED)
+    throw Error(&#x27;Observer has already been opened.&#x27;);
+
+  addToAll(this);
+  this.callback_ = callback;
+  this.target_ = target;
+  this.connect_();
+  this.state_ = OPENED;
+  return this.value_;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+PathObserver observes a &#x22;value-at-a-path&#x22; from a given object:
+
+```JavaScript
+var obj = { foo: { bar: &#x27;baz&#x27; } };
+var defaultValue = 42;
+var observer = new PathObserver(obj, &#x27;foo.bar&#x27;, defaultValue);
+observer.<span class="apidocCodeKeywordSpan">open</span>(function(newValue, oldValue) {
+  // respond to obj.foo.bar having changed value.
+});
+```
+
+PathObserver will report a change whenever the value obtained by the corresponding path expression (e.g. `obj.foo.bar`) would return
+ a different value.
+
+PathObserver also exposes a `setValue` method which attempts to update the underlying value. Setting the value does not affect notification
+ state (in other words, a caller sets the value but does not `discardChanges`, the `changeFn` will be notified of the change).
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.Observer.prototype.report_" id="apidoc.element.observe-js.Observer.prototype.report_">
+        function <span class="apidocSignatureSpan">observe-js.Observer.prototype.</span>report_
+        <span class="apidocSignatureSpan">(changes)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">report_ = function (changes) {
+  try {
+    this.callback_.apply(this.target_, changes);
+  } catch (ex) {
+    Observer._errorThrownDuringCallback = true;
+    console.error(&#x27;Exception caught during observer callback: &#x27; +
+                   (ex.stack || ex));
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+if (diffIsEmpty(diff))
+  return false;
+
+if (!hasObserve)
+  this.oldObject_ = this.copyObject(this.value_);
+
+this.<span class="apidocCodeKeywordSpan">report_</span>([
+  diff.added || {},
+  diff.removed || {},
+  diff.changed || {},
+  function(property) {
+    return oldValues[property];
+  }
+]);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.observe-js.ObserverTransform" id="apidoc.module.observe-js.ObserverTransform">module observe-js.ObserverTransform</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.ObserverTransform.ObserverTransform" id="apidoc.element.observe-js.ObserverTransform.ObserverTransform">
+        function <span class="apidocSignatureSpan">observe-js.</span>ObserverTransform
+        <span class="apidocSignatureSpan">(observable, getValueFn, setValueFn, dontPassThroughSet)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ObserverTransform(observable, getValueFn, setValueFn, dontPassThroughSet) {
+  this.callback_ = undefined;
+  this.target_ = undefined;
+  this.value_ = undefined;
+  this.observable_ = observable;
+  this.getValueFn_ = getValueFn || identFn;
+  this.setValueFn_ = setValueFn || identFn;
+  // TODO(rafaelw): This is a temporary hack. PolymerExpressions needs this
+  // at the moment because of a bug in it&#x27;s dependency tracking.
+  this.dontPassThroughSet_ = dontPassThroughSet;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.observe-js.ObserverTransform.prototype" id="apidoc.module.observe-js.ObserverTransform.prototype">module observe-js.ObserverTransform.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.ObserverTransform.prototype.close" id="apidoc.element.observe-js.ObserverTransform.prototype.close">
+        function <span class="apidocSignatureSpan">observe-js.ObserverTransform.prototype.</span>close
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">close = function () {
+  if (this.observable_)
+    this.observable_.close();
+  this.callback_ = undefined;
+  this.target_ = undefined;
+  this.observable_ = undefined;
+  this.value_ = undefined;
+  this.getValueFn_ = undefined;
+  this.setValueFn_ = undefined;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  this.mutations = 0;
+},
+
+dispose: function() {
+  this.objects = null;
+  while (this.observers.length) {
+    this.observers.pop().<span class="apidocCodeKeywordSpan">close</span>();
+  }
+  this.observers = null;
+  if (Observer._allObserversCount != 0) {
+    alert(&#x27;Observers leaked&#x27;);
+  }
+},
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.ObserverTransform.prototype.deliver" id="apidoc.element.observe-js.ObserverTransform.prototype.deliver">
+        function <span class="apidocSignatureSpan">observe-js.ObserverTransform.prototype.</span>deliver
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">deliver = function () {
+  return this.observable_.deliver();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+// returns 20.
+transform.open(function(newValue, oldValue) {
+  console.log(&#x27;new: &#x27; + newValue + &#x27;, old: &#x27; + oldValue);
+});
+
+obj.value = 20;
+transform.<span class="apidocCodeKeywordSpan">deliver</span>(); // &#x27;new: 40, old: 20&#x27;
+transform.setValue(4); // obj.value === 2;
+```
+
+ObserverTransform can also be used to reduce a set of observed values to a single value:
+
+```JavaScript
+var obj = { a: 1, b: 2, c: 3 };
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.ObserverTransform.prototype.discardChanges" id="apidoc.element.observe-js.ObserverTransform.prototype.discardChanges">
+        function <span class="apidocSignatureSpan">observe-js.ObserverTransform.prototype.</span>discardChanges
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">discardChanges = function () {
+  this.value_ = this.getValueFn_(this.observable_.discardChanges());
+  return this.value_;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var object = this.observed_[i];
+var path = this.observed_[i+1];
+var value;
+if (object === observerSentinel) {
+  var observable = path;
+  value = this.state_ === UNOPENED ?
+      observable.open(this.deliver, this) :
+      observable.<span class="apidocCodeKeywordSpan">discardChanges</span>();
+} else {
+  value = path.getValueFrom(object);
+}
+
+if (skipChanges) {
+  this.value_[i / 2] = value;
+  continue;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.ObserverTransform.prototype.observedCallback_" id="apidoc.element.observe-js.ObserverTransform.prototype.observedCallback_">
+        function <span class="apidocSignatureSpan">observe-js.ObserverTransform.prototype.</span>observedCallback_
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">observedCallback_ = function (value) {
+  value = this.getValueFn_(value);
+  if (areSameValue(value, this.value_))
+    return;
+  var oldValue = this.value_;
+  this.value_ = value;
+  this.callback_.call(this.target_, this.value_, oldValue);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.ObserverTransform.prototype.open" id="apidoc.element.observe-js.ObserverTransform.prototype.open">
+        function <span class="apidocSignatureSpan">observe-js.ObserverTransform.prototype.</span>open
+        <span class="apidocSignatureSpan">(callback, target)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">open = function (callback, target) {
+  this.callback_ = callback;
+  this.target_ = target;
+  this.value_ =
+      this.getValueFn_(this.observable_.open(this.observedCallback_, this));
+  return this.value_;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+PathObserver observes a &#x22;value-at-a-path&#x22; from a given object:
+
+```JavaScript
+var obj = { foo: { bar: &#x27;baz&#x27; } };
+var defaultValue = 42;
+var observer = new PathObserver(obj, &#x27;foo.bar&#x27;, defaultValue);
+observer.<span class="apidocCodeKeywordSpan">open</span>(function(newValue, oldValue) {
+  // respond to obj.foo.bar having changed value.
+});
+```
+
+PathObserver will report a change whenever the value obtained by the corresponding path expression (e.g. `obj.foo.bar`) would return
+ a different value.
+
+PathObserver also exposes a `setValue` method which attempts to update the underlying value. Setting the value does not affect notification
+ state (in other words, a caller sets the value but does not `discardChanges`, the `changeFn` will be notified of the change).
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.ObserverTransform.prototype.setValue" id="apidoc.element.observe-js.ObserverTransform.prototype.setValue">
+        function <span class="apidocSignatureSpan">observe-js.ObserverTransform.prototype.</span>setValue
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setValue = function (value) {
+  value = this.setValueFn_(value);
+  if (!this.dontPassThroughSet_ &#x26;&#x26; this.observable_.setValue)
+    return this.observable_.setValue(value);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+PathObserver will report a change whenever the value obtained by the corresponding path expression (e.g. `obj.foo.bar`) would return
+ a different value.
+
+PathObserver also exposes a `setValue` method which attempts to update the underlying value. Setting the value does not affect notification
+ state (in other words, a caller sets the value but does not `discardChanges`, the `changeFn` will be notified of the change).
+
+```JavaScript
+observer.<span class="apidocCodeKeywordSpan">setValue</span>(&#x27;boo&#x27;);
+assert(obj.foo.bar == &#x27;boo&#x27;);
+```
+
+Notes:
+* If the path is ever unreachable, the value is considered to be `undefined` (unless you pass an overriding `defaultValue` to `new
+ PathObserver(...)` as shown in the above example).
+* If the path is empty (e.g. `&#x27;&#x27;`), it is said to be the empty path and its value is its root object.
+* PathObservation respects values on the prototype chain
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.observe-js.Path" id="apidoc.module.observe-js.Path">module observe-js.Path</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.Path.Path" id="apidoc.element.observe-js.Path.Path">
+        function <span class="apidocSignatureSpan">observe-js.</span>Path
+        <span class="apidocSignatureSpan">(parts, privateToken)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Path(parts, privateToken) {
+  if (privateToken !== constructorIsPrivate)
+    throw Error(&#x27;Use Path.get to retrieve path objects&#x27;);
+
+  for (var i = 0; i &#x3c; parts.length; i++) {
+    this.push(String(parts[i]));
+  }
+
+  if (hasEval &#x26;&#x26; this.length) {
+    this.getValueFrom = this.compiledGetValueFromFn();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.Path.get" id="apidoc.element.observe-js.Path.get">
+        function <span class="apidocSignatureSpan">observe-js.Path.</span>get
+        <span class="apidocSignatureSpan">(pathString)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getPath(pathString) {
+  if (pathString instanceof Path)
+    return pathString;
+
+  if (pathString == null || pathString.length == 0)
+    pathString = &#x27;&#x27;;
+
+  if (typeof pathString != &#x27;string&#x27;) {
+    if (isIndex(pathString.length)) {
+      // Constructed with array-like (pre-parsed) keys
+      return new Path(pathString, constructorIsPrivate);
+    }
+
+    pathString = String(pathString);
+  }
+
+  var path = pathCache[pathString];
+  if (path)
+    return path;
+
+  var parts = parsePath(pathString);
+  if (!parts)
+    return invalidPath;
+
+  path = new Path(parts, constructorIsPrivate);
+  pathCache[pathString] = path;
+  return path;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+transform.deliver(); // &#x27;new: 14, old: 6&#x27;
+```
+
+### Path objects
+
+A path is an ECMAScript expression consisting only of identifiers (`myVal`), member accesses (`foo.bar`) and key lookup with literal
+ values (`arr[0]` `obj[&#x27;str-value&#x27;].bar.baz`).
+
+`Path.<span class="apidocCodeKeywordSpan">get</span>(&#x27;foo.bar.baz&#x27;)` returns a Path object which represents the path.
+Path objects have the following API:
+
+```JavaScript
+{
+// Returns the current value of the path from the provided object. If eval() is available,
+// a compiled getter will be used for better performance. Like PathObserver above, undefined
+// is returned unless you provide an overriding defaultValue.
+getValueFrom: function(obj, defaultValue) { },
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.observe-js.Path.prototype" id="apidoc.module.observe-js.Path.prototype">module observe-js.Path.prototype</a></h1>
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.Path.prototype.compiledGetValueFromFn" id="apidoc.element.observe-js.Path.prototype.compiledGetValueFromFn">
+        function <span class="apidocSignatureSpan">observe-js.Path.prototype.</span>compiledGetValueFromFn
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">compiledGetValueFromFn = function () {
+  var str = &#x27;&#x27;;
+  var pathString = &#x27;obj&#x27;;
+  str += &#x27;if (obj != null&#x27;;
+  var i = 0;
+  var key;
+  for (; i &#x3c; (this.length - 1); i++) {
+    key = this[i];
+    pathString += isIdent(key) ? &#x27;.&#x27; + key : formatAccessor(key);
+    str += &#x27; &#x26;&#x26;\n    &#x27; + pathString + &#x27; != null&#x27;;
+  }
+
+  key = this[i];
+  var keyIsIdent = isIdent(key);
+  var keyForInOperator = keyIsIdent ? &#x27;&#x22;&#x27; + key.replace(/&#x22;/g, &#x27;\\&#x22;&#x27;) + &#x27;&#x22;&#x27; : key;
+  str += &#x27; &#x26;&#x26;\n    &#x27; + keyForInOperator + &#x27; in &#x27; + pathString + &#x27;)\n&#x27;;
+  pathString += keyIsIdent ? &#x27;.&#x27; + key : formatAccessor(key);
+
+  str += &#x27;  return &#x27; + pathString + &#x27;;\nelse\n  return defaultValue;&#x27;;
+  return new Function(&#x27;obj&#x27;, &#x27;defaultValue&#x27;, str);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    throw Error(&#x27;Use Path.get to retrieve path objects&#x27;);
+
+  for (var i = 0; i &#x3c; parts.length; i++) {
+    this.push(String(parts[i]));
+  }
+
+  if (hasEval &#x26;&#x26; this.length) {
+    this.getValueFrom = this.<span class="apidocCodeKeywordSpan">compiledGetValueFromFn</span>();
+  }
+}
+
+// TODO(rafaelw): Make simple LRU cache
+var pathCache = {};
+
+function getPath(pathString) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.Path.prototype.getValueFrom" id="apidoc.element.observe-js.Path.prototype.getValueFrom">
+        function <span class="apidocSignatureSpan">observe-js.Path.prototype.</span>getValueFrom
+        <span class="apidocSignatureSpan">(obj, defaultValue)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getValueFrom = function (obj, defaultValue) {
+  for (var i = 0; i &#x3c; this.length; i++) {
+    var key = this[i];
+    if (obj == null || !(key in obj))
+      return defaultValue;
+    obj = obj[key];
+  }
+  return obj;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    },
+
+    newObserver: function(obj) {
+return new PathObserver(obj, this.path);
+    },
+
+    mutateObject: function(obj) {
+var val = this.path.<span class="apidocCodeKeywordSpan">getValueFrom</span>(obj);
+if (this.leaf) {
+  this.path.setValueFrom(obj, val + 1);
+} else {
+  this.firstPathProp.setValueFrom(obj, this.newPath(this.path.slice(1), val + 1));
+}
+
+return 1;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.Path.prototype.iterateObjects" id="apidoc.element.observe-js.Path.prototype.iterateObjects">
+        function <span class="apidocSignatureSpan">observe-js.Path.prototype.</span>iterateObjects
+        <span class="apidocSignatureSpan">(obj, observe)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">iterateObjects = function (obj, observe) {
+  for (var i = 0; i &#x3c; this.length; i++) {
+    if (i)
+      obj = obj[this[i - 1]];
+    if (!isObject(obj))
+      return;
+    observe(obj, this[i]);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  if (this.directObserver_) {
+    this.directObserver_.close(this);
+    this.directObserver_ = undefined;
+  }
+},
+
+iterateObjects_: function(observe) {
+  this.path_.<span class="apidocCodeKeywordSpan">iterateObjects</span>(this.object_, observe);
+},
+
+check_: function(changeRecords, skipChanges) {
+  var oldValue = this.value_;
+  this.value_ = this.path_.getValueFrom(this.object_, this.defaultValue_);
+  if (skipChanges || areSameValue(this.value_, oldValue))
+    return false;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.Path.prototype.setValueFrom" id="apidoc.element.observe-js.Path.prototype.setValueFrom">
+        function <span class="apidocSignatureSpan">observe-js.Path.prototype.</span>setValueFrom
+        <span class="apidocSignatureSpan">(obj, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setValueFrom = function (obj, value) {
+  if (!this.length)
+    return false;
+
+  for (var i = 0; i &#x3c; this.length - 1; i++) {
+    if (!isObject(obj))
+      return false;
+    obj = obj[this[i]];
+  }
+
+  if (!isObject(obj))
+    return false;
+
+  obj[this[i]] = value;
+  return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  newObserver: function(obj) {
+    return new PathObserver(obj, this.path);
+  },
+
+  mutateObject: function(obj) {
+    var val = this.path.getValueFrom(obj);
+    if (this.leaf) {
+      this.path.<span class="apidocCodeKeywordSpan">setValueFrom</span>(obj, val + 1);
+    } else {
+      this.firstPathProp.setValueFrom(obj, this.newPath(this.path.slice(1), val + 1));
+    }
+
+    return 1;
+  }
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.Path.prototype.toString" id="apidoc.element.observe-js.Path.prototype.toString">
+        function <span class="apidocSignatureSpan">observe-js.Path.prototype.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+  var pathString = &#x27;&#x27;;
+  for (var i = 0; i &#x3c; this.length; i++) {
+    var key = this[i];
+    if (isIdent(key)) {
+      pathString += i ? &#x27;.&#x27; + key : key;
+    } else {
+      pathString += formatAccessor(key);
+    }
+  }
+
+  return pathString;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      planners.set(obj, planner);
+    }
+
+    planner.addConstraint(Object.keys(methodFunctions).map(function(property) {
+      var func = methodFunctions[property];
+
+      return new Method({
+        name: func.<span class="apidocCodeKeywordSpan">toString</span>(),
+        outputs: [ property ],
+        f: function() { obj[property] = func.apply(obj); }
+      });
+    }));
+  }
+})(this);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.observe-js.PathObserver" id="apidoc.module.observe-js.PathObserver">module observe-js.PathObserver</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.PathObserver.PathObserver" id="apidoc.element.observe-js.PathObserver.PathObserver">
+        function <span class="apidocSignatureSpan">observe-js.</span>PathObserver
+        <span class="apidocSignatureSpan">(object, path, defaultValue)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function PathObserver(object, path, defaultValue) {
+  Observer.call(this);
+
+  this.object_ = object;
+  this.path_ = getPath(path);
+  this.defaultValue_ = defaultValue;
+  this.directObserver_ = undefined;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.observe-js.PathObserver.prototype" id="apidoc.module.observe-js.PathObserver.prototype">module observe-js.PathObserver.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.PathObserver.prototype.check_" id="apidoc.element.observe-js.PathObserver.prototype.check_">
+        function <span class="apidocSignatureSpan">observe-js.PathObserver.prototype.</span>check_
+        <span class="apidocSignatureSpan">(changeRecords, skipChanges)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">check_ = function (changeRecords, skipChanges) {
+  var oldValue = this.value_;
+  this.value_ = this.path_.getValueFrom(this.object_, this.defaultValue_);
+  if (skipChanges || areSameValue(this.value_, oldValue))
+    return false;
+
+  this.report_([this.value_, oldValue, this]);
+  return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+invalidPath.valid = false;
+invalidPath.getValueFrom = invalidPath.setValueFrom = function() {};
+
+var MAX_DIRTY_CHECK_CYCLES = 1000;
+
+function dirtyCheck(observer) {
+  var cycles = 0;
+  while (cycles &#x3c; MAX_DIRTY_CHECK_CYCLES &#x26;&#x26; observer.<span class="apidocCodeKeywordSpan">check_</span>()) {
+    cycles++;
+  }
+  if (testingExposeCycleCount)
+    global.dirtyCheckCycleCount = cycles;
+
+  return cycles &#x3e; 0;
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.PathObserver.prototype.connect_" id="apidoc.element.observe-js.PathObserver.prototype.connect_">
+        function <span class="apidocSignatureSpan">observe-js.PathObserver.prototype.</span>connect_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">connect_ = function () {
+  if (hasObserve)
+    this.directObserver_ = getObservedSet(this, this.object_);
+
+  this.check_(undefined, true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+open: function(callback, target) {
+  if (this.state_ != UNOPENED)
+    throw Error(&#x27;Observer has already been opened.&#x27;);
+
+  addToAll(this);
+  this.callback_ = callback;
+  this.target_ = target;
+  this.<span class="apidocCodeKeywordSpan">connect_</span>();
+  this.state_ = OPENED;
+  return this.value_;
+},
+
+close: function() {
+  if (this.state_ != OPENED)
+    return;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.PathObserver.prototype.disconnect_" id="apidoc.element.observe-js.PathObserver.prototype.disconnect_">
+        function <span class="apidocSignatureSpan">observe-js.PathObserver.prototype.</span>disconnect_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">disconnect_ = function () {
+  this.value_ = undefined;
+
+  if (this.directObserver_) {
+    this.directObserver_.close(this);
+    this.directObserver_ = undefined;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+},
+
+close: function() {
+  if (this.state_ != OPENED)
+    return;
+
+  removeFromAll(this);
+  this.<span class="apidocCodeKeywordSpan">disconnect_</span>();
+  this.value_ = undefined;
+  this.callback_ = undefined;
+  this.target_ = undefined;
+  this.state_ = CLOSED;
+},
+
+deliver: function() {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.PathObserver.prototype.iterateObjects_" id="apidoc.element.observe-js.PathObserver.prototype.iterateObjects_">
+        function <span class="apidocSignatureSpan">observe-js.PathObserver.prototype.</span>iterateObjects_
+        <span class="apidocSignatureSpan">(observe)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">iterateObjects_ = function (observe) {
+  this.path_.iterateObjects(this.object_, observe);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+if (allRootObjNonObservedProps(recs))
+  return;
+
+var i, observer;
+for (i = 0; i &#x3c; observers.length; i++) {
+  observer = observers[i];
+  if (observer.state_ == OPENED) {
+    observer.<span class="apidocCodeKeywordSpan">iterateObjects_</span>(observe);
+  }
+}
+
+for (i = 0; i &#x3c; observers.length; i++) {
+  observer = observers[i];
+  if (observer.state_ == OPENED) {
+    observer.check_();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.PathObserver.prototype.setValue" id="apidoc.element.observe-js.PathObserver.prototype.setValue">
+        function <span class="apidocSignatureSpan">observe-js.PathObserver.prototype.</span>setValue
+        <span class="apidocSignatureSpan">(newValue)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setValue = function (newValue) {
+  if (this.path_)
+    this.path_.setValueFrom(this.object_, newValue);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+PathObserver will report a change whenever the value obtained by the corresponding path expression (e.g. `obj.foo.bar`) would return
+ a different value.
+
+PathObserver also exposes a `setValue` method which attempts to update the underlying value. Setting the value does not affect notification
+ state (in other words, a caller sets the value but does not `discardChanges`, the `changeFn` will be notified of the change).
+
+```JavaScript
+observer.<span class="apidocCodeKeywordSpan">setValue</span>(&#x27;boo&#x27;);
+assert(obj.foo.bar == &#x27;boo&#x27;);
+```
+
+Notes:
+* If the path is ever unreachable, the value is considered to be `undefined` (unless you pass an overriding `defaultValue` to `new
+ PathObserver(...)` as shown in the above example).
+* If the path is empty (e.g. `&#x27;&#x27;`), it is said to be the empty path and its value is its root object.
+* PathObservation respects values on the prototype chain
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.observe-js.benchmark" id="apidoc.module.observe-js.benchmark">module observe-js.benchmark</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.benchmark.Benchmark" id="apidoc.element.observe-js.benchmark.Benchmark">
+        function <span class="apidocSignatureSpan">observe-js.benchmark.</span>Benchmark
+        <span class="apidocSignatureSpan">(testingTicks, ticksPerFrame, maxRuns)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Benchmark(testingTicks, ticksPerFrame, maxRuns) {
+  this.testingTicks = testingTicks || TESTING_TICKS;
+  this.ticksPerFrame = ticksPerFrame || TICKS_PER_FRAME;
+  this.maxRuns = maxRuns || 50;
+  this.average = 0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.observe-js.planner" id="apidoc.module.observe-js.planner">module observe-js.planner</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.observe-js.planner.Planner" id="apidoc.element.observe-js.planner.Planner">
+        function <span class="apidocSignatureSpan">observe-js.planner.</span>Planner
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Planner() {
+  this.variables = [];
+  this.constraints = [];
+  this.variableUIDCounter = 1;
+  this.methodUIDCounter = 1;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
